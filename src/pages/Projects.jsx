@@ -4,6 +4,7 @@ import ProjectCard from "../components/projects/ProjectCard";
 import { projectsData, projectCategories } from "../data/projects";
 
 export default function Projects() {
+  const base = import.meta.env.BASE_URL;
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredProjects = activeCategory === "all"
@@ -49,7 +50,7 @@ export default function Projects() {
               <div className="relative w-48 h-48 bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8)] z-20 flex items-center justify-center p-3 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-12px_rgba(193,146,47,0.3)]">
                 <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
                   <img 
-                    src="./Images/Home_page_img/logo.jpeg" 
+                    src={`${base}Images/Home_page_img/logo.jpeg`} 
                     alt="RA Engineering Logo" 
                     className="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-700"
                   />
@@ -112,7 +113,7 @@ export default function Projects() {
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             <div className="rounded-2xl overflow-hidden shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] border-[4px] border-white bg-[var(--color-mist)] group relative">
               <video 
-                src="./Videos/road_construct.mp4" 
+                src={`${base}Videos/road_construct.mp4`} 
                 autoPlay 
                 loop 
                 muted 
@@ -131,7 +132,7 @@ export default function Projects() {
 
             <div className="rounded-2xl overflow-hidden shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] border-[4px] border-white bg-[var(--color-mist)] group relative">
               <video 
-                src="./Videos/road_drill.mp4" 
+                src={`${base}Videos/road_drill.mp4`} 
                 autoPlay 
                 loop 
                 muted 

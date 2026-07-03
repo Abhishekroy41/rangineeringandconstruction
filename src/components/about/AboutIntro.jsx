@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import AutoSlider from "../common/AutoSlider";
 
 const FacebookIcon = ({ size = 18 }) => (
@@ -30,18 +31,19 @@ const LinkedinIcon = ({ size = 18 }) => (
 
 
 export default function AboutIntro() {
+  const base = import.meta.env.BASE_URL;
   // Placeholder images - user will provide actual ones later
   const introImages = [
-    "/Images/machine1.jpeg",
-    "/Images/machine2.jpeg",
-    "/Images/tgdepmachine3.jpg",
-    "/Images/total_station_survey.jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 2.22.15 PM (1).jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 2.22.24 PM (1).jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 3.32.37 PM (1).jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 3.32.44 PM (1).jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 3.32.56 PM (1).jpeg",
-    "/Images/WhatsApp Image 2026-07-01 at 3.34.57 PM (1).jpeg"
+    `${base}Images/machine1.jpeg`,
+    `${base}Images/machine2.jpeg`,
+    `${base}Images/tgdepmachine3.jpg`,
+    `${base}Images/total_station_survey.jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 2.22.15 PM (1).jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 2.22.24 PM (1).jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 3.32.37 PM (1).jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 3.32.44 PM (1).jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 3.32.56 PM (1).jpeg`,
+    `${base}Images/WhatsApp Image 2026-07-01 at 3.34.57 PM (1).jpeg`
   ];
 
   return (
@@ -72,10 +74,10 @@ export default function AboutIntro() {
             </p>
             
             <div className="flex flex-wrap items-center gap-6 mt-10">
-              <a href="#who-we-are" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--color-navy-800)] text-white font-mono-data text-xs uppercase tracking-widest font-bold rounded-sm hover:bg-[var(--color-gold-500)] hover:text-[var(--color-navy-900)] transition-colors shadow-md group">
+              <Link to="/services" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--color-navy-800)] text-white font-mono-data text-xs uppercase tracking-widest font-bold rounded-sm hover:bg-[var(--color-gold-500)] hover:text-[var(--color-navy-900)] transition-colors shadow-md group">
                 Know More
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
               
               {/* Social Media Links */}
               <div className="flex items-center gap-4 border-l-2 border-[var(--color-mist)] pl-6">
