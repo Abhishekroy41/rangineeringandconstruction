@@ -31,7 +31,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <img 
-              src="./Images/Home_page_img/logo.jpeg" 
+              src={`${import.meta.env.BASE_URL}Images/Home_page_img/logo.jpeg`} 
               alt="R.A. Engineering Logo" 
               className="w-14 h-14 object-contain rounded-sm" 
             />

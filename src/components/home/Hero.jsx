@@ -13,7 +13,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover transform-gpu pointer-events-none"
       >
-        <source src="./Videos/Home_bg_01.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}Videos/Home_bg_01.mp4`} type="video/mp4" />
       </video>
 
       {/* Subtle Dark Overlay for Text Readability */}
@@ -26,7 +26,7 @@ export default function Hero() {
           Precision &middot; Quality &middot; Trust
         </span>
 
-        <h1 className="font-bungee mt-4 text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.15] max-w-3xl drop-shadow-xl tracking-tight text-white">
+        <h1 className="font-display mt-4 text-4xl sm:text-5xl md:text-7xl font-black leading-[1.15] max-w-4xl drop-shadow-xl tracking-tight text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
           Building the Future with Unmatched Precision
         </h1>
 

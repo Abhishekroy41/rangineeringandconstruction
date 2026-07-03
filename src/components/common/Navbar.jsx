@@ -38,16 +38,20 @@ export default function Navbar() {
         {/* Left: Brand / Logo */}
         <Link to="/" className="flex items-center gap-3 md:gap-4 group">
           <img 
-            src="./Images/Home_page_img/logo.jpeg" 
+            src={`${import.meta.env.BASE_URL}Images/Home_page_img/logo.jpeg`} 
             alt="R.A. Engineering Logo" 
             className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain rounded-full shadow-sm group-hover:scale-105 transition-transform duration-300" 
           />
-          <div className="flex flex-col leading-none">
-            <span className="font-display text-lg md:text-2xl font-bold tracking-tight text-[var(--color-navy-950)] group-hover:text-[var(--color-gold-600)] transition-colors duration-300">
+          <div className="flex flex-col leading-none mt-1">
+            <span className="font-display text-lg md:text-2xl font-bold tracking-tight text-[var(--color-navy-950)] group-hover:text-[var(--color-gold-600)] transition-colors duration-300 relative pb-1.5">
               R.A. Engineering <span className="hidden sm:inline text-[var(--color-gold-600)]">&amp; Construction</span>
+              {/* Decorative Line */}
+              <span className="absolute bottom-0 left-[2.5rem] md:left-[3.5rem] lg:left-[4rem] w-[90%] md:w-[95%] h-[2px] bg-gradient-to-r from-[var(--color-gold-500)] via-[var(--color-gold-600)] to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></span>
             </span>
-            <span className="sm:hidden text-[10px] font-semibold text-[var(--color-gold-600)] mt-1 uppercase tracking-wider">
+            <span className="sm:hidden text-[10px] font-semibold text-[var(--color-gold-600)] mt-1.5 uppercase tracking-wider relative pb-1">
               &amp; Construction
+              {/* Mobile Decorative Line */}
+              <span className="absolute bottom-0 left-0 w-[110%] h-[1px] bg-gradient-to-r from-[var(--color-gold-500)] to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></span>
             </span>
           </div>
         </Link>

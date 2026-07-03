@@ -31,7 +31,7 @@ export default function About() {
             <div className="w-full md:w-1/3">
               <div className="aspect-square rounded-xl overflow-hidden mb-6 border-2 border-white shadow-lg relative group">
                 <img 
-                  src="./Images/profile_pic.png" 
+                  src={`${import.meta.env.BASE_URL}Images/profile_pic.png`} 
                   alt={company.ownerName} 
                   className="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
                 />
