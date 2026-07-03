@@ -16,10 +16,24 @@ export default function Projects() {
       
       {/* Premium Dark Header with Advanced Curves & Graphics */}
       <div className="relative bg-[var(--color-navy-950)] pt-32 pb-40 overflow-hidden">
+        
+        {/* Blended Background Image (Visually mixed) */}
+        <div 
+          className="absolute inset-0 z-0 opacity-50 mix-blend-overlay"
+          style={{
+            backgroundImage: `url('${base}Images/topgra_03.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
+
+        {/* Dark Gradient Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-navy-950)]/90 via-[var(--color-navy-950)]/70 to-[var(--color-navy-950)]/30 z-0"></div>
+
         {/* Background Gradients & Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-[var(--color-gold-500)]/10 blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-10 w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[80px] pointer-events-none"></div>
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] rounded-full bg-[var(--color-gold-500)]/15 blur-[100px] pointer-events-none z-0"></div>
+        <div className="absolute bottom-0 left-10 w-[300px] h-[300px] rounded-full bg-blue-500/15 blur-[80px] pointer-events-none z-0"></div>
         
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between">
           <div className="max-w-2xl">
