@@ -1,6 +1,16 @@
-import { CircleDot, CheckCircle2 } from "lucide-react";
+import { 
+  CircleDot, CheckCircle2, Map, Mountain, Droplet, Waves, 
+  Sun, Tractor, Train, MapPin, Building, Satellite, 
+  Telescope, ClipboardEdit, Route, Ruler 
+} from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import { surveyServices, constructionServices, valueProps } from "../data/services";
+
+const IconMap = {
+  Map, Mountain, Droplet, Waves, Sun, Tractor, Train, 
+  MapPin, Building, Satellite, Telescope, ClipboardEdit, 
+  Route, Ruler
+};
 
 export default function Services() {
   return (
@@ -33,21 +43,24 @@ export default function Services() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {surveyServices.map((service) => (
-              <div key={service.id} className="group bg-white p-6 rounded-xl border border-[var(--color-navy-800)]/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-navy-700)] to-[var(--color-gold-500)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[var(--color-mist)] rounded-lg text-2xl group-hover:scale-110 transition-transform duration-300">
-                    {service.emoji || "🔧"}
+            {surveyServices.map((service) => {
+              const IconComponent = IconMap[service.icon] || CircleDot;
+              return (
+                <div key={service.id} className="group bg-white p-6 rounded-xl border border-[var(--color-navy-800)]/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-navy-700)] to-[var(--color-gold-500)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-[var(--color-mist)] rounded-lg text-[var(--color-navy-700)] group-hover:text-[var(--color-gold-600)] group-hover:scale-110 transition-all duration-300">
+                      <IconComponent size={24} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-sans text-lg font-bold text-[var(--color-navy-800)] leading-tight mt-1 group-hover:text-[var(--color-gold-600)] transition-colors duration-300">{service.title}</h3>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-[var(--color-navy-800)] leading-tight mt-1 group-hover:text-[var(--color-gold-600)] transition-colors duration-300">{service.title}</h3>
+                  <p className="font-sans text-[var(--color-slate)] text-sm leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <p className="text-[var(--color-slate)] text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
