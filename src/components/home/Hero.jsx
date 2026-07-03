@@ -1,33 +1,41 @@
-import { useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { company } from "../../data/company";
 
 export default function Hero() {
-  const videoRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const bgImages = [
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (1).jpg`,
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (2).jpg`,
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (3).jpg`,
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (4).jpg`,
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (5).jpg`,
+    `${import.meta.env.BASE_URL}Images/Home_page_img/Home_img01 (6).jpg`,
+  ];
 
   useEffect(() => {
-    // Some browsers block autoplay or sometimes leave the video blank on initial render.
-    // Explicitly playing it via ref ensures it starts.
-    if (videoRef.current) {
-      videoRef.current.play().catch((e) => console.log("Autoplay prevented:", e));
-    }
-  }, []);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [bgImages.length]);
 
   return (
     <section className="relative overflow-hidden bg-[var(--color-navy-950)] text-white">
-      {/* Background Video Layer */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover transform-gpu pointer-events-none"
-      >
-        <source src={`${import.meta.env.BASE_URL}Videos/Home_bg_01.mp4`} type="video/mp4" />
-      </video>
+      {/* Background Image Carousel Layer */}
+      {bgImages.map((src, index) => (
+        <img
+          key={src}
+          src={src}
+          alt={`Background ${index + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover transform-gpu pointer-events-none transition-opacity duration-1000 ease-in-out ${
+            index === currentImageIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
 
       {/* Subtle Dark Overlay for Text Readability */}
       <div className="absolute inset-0 bg-black/65 pointer-events-none" />
