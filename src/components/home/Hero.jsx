@@ -18,7 +18,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
-    }, 4000); // Change image every 4 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, [bgImages.length]);
@@ -31,7 +31,7 @@ export default function Hero() {
           key={src}
           src={src}
           alt={`Background ${index + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transform-gpu pointer-events-none transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 w-full h-full object-cover transform-gpu pointer-events-none transition-opacity duration-700 ease-in-out ${
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
         />
