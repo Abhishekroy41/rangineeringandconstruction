@@ -67,13 +67,13 @@ export const company = {
       title: "Drone",
       subtitle: "UNMANNED AERIAL VEHICLE",
       description: "State-of-the-art surveying drones utilized for high-resolution aerial photogrammetry and 3D terrain modeling. Capable of producing detailed orthomosaics, point clouds, and elevation models (DSM/DTM).",
-      image: "./Images/tgdepmachine3.jpg",
+      image: "./Images/drone_service.jpg",
       imageClass: "scale-125"
     },
     {
       id: "eq-4",
       badge: "LIDAR",
-      title: "LiDAR",
+      title: "Lidar",
       subtitle: "LIGHT DETECTION AND RANGING",
       description: "Advanced laser scanning technology designed to rapidly capture ultra-detailed 3D point clouds. Provides millimeter-grade precision for complex structural analysis and terrain elevation modeling.",
       image: "./Images/lidar_cons.jpg"

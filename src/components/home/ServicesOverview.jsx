@@ -18,7 +18,11 @@ const topServices = [
   { 
     ...surveyServices[1], 
     icon: Mountain,
-    images: ["./Images/tgdepmachine3.jpg"]
+    images: [
+      "./Gallery/Contour Survey/Contour Survey & Mapping (1).jpeg",
+      "./Gallery/Contour Survey/Contour Survey & Mapping (2).jpeg",
+      "./Gallery/Contour Survey/Contour Survey & Mapping (3).jpeg"
+    ]
   }, // Contour
   { 
     ...surveyServices[7], 
@@ -32,8 +36,8 @@ const topServices = [
     ...surveyServices[5], 
     icon: LayoutDashboard,
     images: [
-      "./Images/WhatsApp Image 2026-07-01 at 2.22.24 PM.jpeg",
-      "./Images/WhatsApp Image 2026-07-01 at 3.32.47 PM.jpeg"
+      "./Images/earthwork_ser (1).jpeg",
+      "./Images/earthwork_ser (2).jpeg"
     ]
   }, // Earthwork Quantity
   { 
