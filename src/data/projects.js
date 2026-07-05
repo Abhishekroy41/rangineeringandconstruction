@@ -4,42 +4,74 @@ export const projectCategories = [
   { id: "construction", label: "Construction" },
   { id: "design", label: "Architecture & Design" },
 ];
-
 export const projectsData = [
   {
-    id: "prj-1",
-    title: "City Center Commercial Complex",
+    id: "prj-0",
+    title: "House Connection Chamber (AMRUT 2.0)",
     category: "construction",
-    location: "Chhindwara, M.P.",
-    description: "Complete architectural design and building construction for a multi-story commercial complex in the heart of the city.",
-    imageUrl: "./Images/project_building_const.jpg",
-    metrics: ["15,000 sq ft", "Completed in 14 Months"],
+    location: "Nagar Nigam Chhindwara, Madhya Pradesh",
+    description: "Construction of House Connection Chambers for individual sewer connections under the AMRUT 2.0 Sewerage Project. The work includes excavation, installation of fabricated shuttering, RCC concreting, precast chamber installation, backfilling, and heavy-duty ductile iron cover fixing. (Status: Project is currently running and under construction).",
+    images: [
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.04.42 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.04.42 PM (2).jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.04.42 PM (1).jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.04.41 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.04.41 PM (1).jpeg"
+    ],
+    metrics: ["Under Construction", "Running Project", "Sewerage Project"],
+  },
+  {
+    id: "prj-1",
+    title: "Railway Curve Centreline Stakeout Survey",
+    category: "survey",
+    location: "Itarsi – Nagpur Railway Corridor (Ch. 0+000–5+960 m)",
+    description: "Centreline stakeout and railway curve survey executed with high precision for the proposed 3rd railway line. Survey services were provided to M/s GEET Infra Enterprises.",
+    images: [
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 4.18.20 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 4.18.21 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 4.18.20 PM (1).jpeg"
+    ],
+    metrics: ["Curve Alignment", "High-Precision DGPS", "Ongoing Project"],
   },
   {
     id: "prj-2",
-    title: "NH-47 Highway Expansion Survey",
+    title: "Industrial Plot Demarcation (Ethanol Plant)",
     category: "survey",
-    location: "Seoni-Nagpur Highway",
-    description: "Detailed topographical and contour survey for the proposed highway expansion project using advanced DGPS equipment.",
-    imageUrl: "./Images/project_highway_const.jpg",
-    metrics: ["12 KM Stretch", "High-Precision Data"],
+    location: "MPIDC Industrial Area, Village Likhdi, Block Chourai, M.P.",
+    description: "Combined survey and boundary demarcation for M/s UKR Industries Ltd., M/s Celstilsands Realty LLP & M/s Ukrunal Industries Ltd. on MPIDC industrial land.",
+    images: [
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.38.26 PM (1).jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.38.26 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.38.27 PM (1).jpeg"
+    ],
+    metrics: ["Boundary Demarcation", "Industrial Scale"],
   },
   {
     id: "prj-3",
     title: "Luxury Residential Villa",
-    category: "design",
+    category: ["design", "construction"],
     location: "Narsinghpur Road, Kusmeli, Ram Ji State Colony, Chhindwara",
     description: "Comprehensive Vastu-compliant architectural planning, detailed 3D modeling, and modern interior design execution for a premium residential villa.",
-    imageUrl: "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.14.14 PM (1).jpeg",
-    metrics: ["3D Modeling", "Turnkey Design"],
+    images: [
+      "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.10.57 PM.jpeg",
+      "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.10.56 PM (1).jpeg",
+      "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.14.12 PM.jpeg",
+      "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.10.57 PM (1).jpeg",
+      "./Images/Home_page_img/WhatsApp Image 2026-07-01 at 4.14.12 PM (2).jpeg"
+    ],
+    metrics: ["3D Modeling", "Turnkey Construction"],
   },
   {
     id: "prj-4",
-    title: "Industrial Plot Demarcation",
-    category: "survey",
-    location: "Borgaon Industrial Area",
-    description: "Accurate boundary demarcation and column layout for a new manufacturing facility.",
-    imageUrl: "./Images/project_road_const.jpg",
-    metrics: ["Column Layout", "Industrial Scale"],
-  },
+    title: "CC & BT Road Cutting Work (AMRUT 2.0)",
+    category: "construction",
+    location: "Nagar Nigam Chhindwara, Madhya Pradesh",
+    description: "Sublet execution of CC & BT road cutting works under the AMRUT 2.0 Sewerage Project. The scope included precise cutting of Cement Concrete (CC) and Bituminous (BT) roads using machines to facilitate sewer pipeline installation. (Status: Project is currently running and under construction).",
+    images: [
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.07.03 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.07.02 PM.jpeg",
+      "./Images2/Project_page_image/WhatsApp Image 2026-07-05 at 3.07.02 PM (1).jpeg"
+    ],
+    metrics: ["Under Construction", "Running Project", "Sewerage Project"],
+  }
 ];

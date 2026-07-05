@@ -1,11 +1,23 @@
 import { MapPin, CheckCircle2, Image as ImageIcon } from "lucide-react";
+import AutoSlider from "../common/AutoSlider";
 
 export default function ProjectCard({ project }) {
+  // To handle the category which could be an array or string
+  const categoryLabel = Array.isArray(project.category) ? project.category[0] : project.category;
+
   return (
     <div className="group flex flex-col bg-white border border-[var(--color-mist)] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
       {/* Image Container */}
       <div className="aspect-[4/3] bg-[var(--color-mist)] relative overflow-hidden flex items-center justify-center contour-bg-light">
-        {project.imageUrl ? (
+        {project.images && project.images.length > 0 ? (
+          <AutoSlider 
+            images={project.images} 
+            altBase={project.title} 
+            containerClassName="w-full h-full"
+            imageClassName="group-hover:scale-105"
+            interval={3000}
+          />
+        ) : project.imageUrl ? (
           <img 
             src={project.imageUrl} 
             alt={project.title}
@@ -19,9 +31,9 @@ export default function ProjectCard({ project }) {
         )}
         
         {/* Category Badge */}
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 z-10">
           <span className="bg-white/90 backdrop-blur-sm text-[var(--color-navy-800)] font-mono-data text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
-            {project.category}
+            {categoryLabel}
           </span>
         </div>
       </div>

@@ -16,7 +16,11 @@ export default function Projects() {
 
   const filteredProjects = activeCategory === "all"
     ? projectsData
-    : projectsData.filter((project) => project.category === activeCategory);
+    : projectsData.filter((project) => 
+        Array.isArray(project.category) 
+          ? project.category.includes(activeCategory)
+          : project.category === activeCategory
+      );
 
   return (
     <div className="bg-[var(--color-paper)] min-h-screen pb-20">
@@ -112,9 +116,48 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))
+            <>
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+              
+              {/* "And Many More" Card at the end of the grid */}
+              <a 
+                href="#/contact"
+                className="group flex flex-col items-center justify-center bg-white border-2 border-dashed border-[var(--color-mist)] hover:border-[var(--color-mist)] rounded-xl overflow-hidden hover:shadow-[0_20px_50px_-12px_rgba(193,146,47,0.15)] hover:scale-[1.02] transition-all duration-500 min-h-[400px] relative p-8 text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-paper)] to-white opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Modern Animated Graphic (No 3D) */}
+                  <div className="relative w-36 h-36 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    {/* Animated Pulse Rings */}
+                    <div className="absolute inset-0 bg-[var(--color-gold-500)]/20 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-75"></div>
+                    <div className="absolute inset-2 bg-[var(--color-gold-500)]/10 rounded-full animate-pulse"></div>
+                    
+                    {/* Center Circle with Logo */}
+                    <div className="relative w-28 h-28 bg-white rounded-full border border-[var(--color-gold-500)]/50 flex items-center justify-center shadow-[0_0_20px_rgba(193,146,47,0.15)] group-hover:shadow-[0_0_30px_rgba(193,146,47,0.4)] transition-all duration-500 overflow-hidden">
+                      <img 
+                        src={`${base}Images/Home_page_img/logo-removebg-preview.png`} 
+                        alt="RA Engineering" 
+                        className="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-[var(--color-navy-800)] mb-4 group-hover:text-[var(--color-gold-600)] transition-colors">
+                    Discover More Projects
+                  </h3>
+                  
+                  <p className="text-[var(--color-slate)] text-sm leading-relaxed mb-8 px-2">
+                    We have successfully delivered 50+ high-profile projects across surveying, architecture, and heavy construction.
+                  </p>
+                  
+                  <span className="inline-flex items-center px-6 py-2 rounded-full border border-[var(--color-mist)] text-[var(--color-navy-800)] group-hover:border-[var(--color-gold-500)] group-hover:bg-[var(--color-gold-500)] group-hover:text-white font-mono-data uppercase tracking-widest text-xs font-semibold transition-all duration-300 shadow-sm group-hover:shadow-md">
+                    Discuss Your Project &rarr;
+                  </span>
+                </div>
+              </a>
+            </>
           ) : (
             <div className="col-span-full py-20 text-center text-[var(--color-slate)]">
               <p className="font-mono-data uppercase tracking-widest text-sm">No projects found in this category.</p>
